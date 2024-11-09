@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - Сайт поддержки научных конференций</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='qwerty.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='logo_pic.png') }}" alt="Логотип конференции" width="100">
+        </a>
+    </div>
+    <div class="text-center">
+        <h1 class="header_1">Поддержка научных конференций</h1>
+    </div>
+    <div class="image">
+        <a href="{{ url_for('registration') }}">
+            <img src="{{ url_for('static', filename='profile_pic.png') }}" alt="Изображение справа" width="40" hspace="20px">
+        </a>
+    </div>
+</header>
+
+<main class="login-container">
+    <section class="login-form">
+        <h2>Вход в систему</h2>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="username">Почта пользователя:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Войти</button>
+            </div>
+        </form>
+        <p class="register-link">Нет аккаунта? <a href="#" id="copyEmail">Напишите нам!</a></p>
+        <div id="copyMessage" class="copy-message">Email скопирован!</div>
+    </section>
+</main>
+
+<script>
+
+document.getElementById('copyEmail').addEventListener('click', function(e) {
+
+    e.preventDefault();
+
+    const email = 'info@conference-support.com';
+
+    navigator.clipboard.writeText(email).then(function() {
+
+        // Показываем сообщение об успешном копировании
+
+        const message = document.getElementById('copyMessage');
+
+        message.style.opacity = '1';
+
+        
+
+        // Скрываем сообщение через 2 секунды
+
+        setTimeout(function() {
+
+            message.style.opacity = '0';
+
+        }, 2000);
+
+    }).catch(function(err) {
+
+        console.error('Не удалось скопировать текст: ', err);
+
+    });
+
+});
+
+</script>
+
+<footer>
+    <p>Контактная информация: info@conference-support.com</p>
+</footer>
+
+</body>
+</html>

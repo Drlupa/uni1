@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт поддержки научных конференций</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='qwerty.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='logo_pic.png') }}" alt="Логотип конференции" width="100">
+        </a>
+    </div>
+    <div class="text-center">
+        <h1 class="header_1">Поддержка научных конференций</h1>
+    </div>
+    <div class="image">
+        <a href="{{ url_for('registration') }}">
+            <img src="{{ url_for('static', filename='profile_pic.png') }}" alt="Изображение справа" width="40" hspace="20px">
+        </a>
+    </div>
+</header>
+
+<main>
+    <div class="hover">
+        <a href="index.html">
+        <section class="intro">
+            <h2>Добро пожаловать на сайт поддержки научных конференций!</h2>
+            <p>Наш сайт обеспечивает приём и рецензирование тезисов различных конференций. С помощью сайта желающие могут принять участие в конференции, сведения о которой есть на сайте.</p>
+        
+    </section>
+        </a>
+    </div>
+
+    <div class="hover">
+        <a href="{{ url_for('registration') }}">
+        <section class="registration">
+            <h2>Вход в аккаунт</h2>
+            <p>Участник вводит свою почту и пароль (которую отправлял для регистрации).</p>
+            <p>Далее участник загружает тезисы своего доклада и указывает секцию конференции.</p>
+    </section>
+        </a>
+    </div>
+
+
+<div class="hover">
+        <a href="review-process.html">
+        <section class="review-process">
+            <h2>Процесс рецензирования</h2>
+            <p>Координатор конференции помечает каждый присланный доклад как отправленный на рецензирование членам программного комитета. Члены программного комитета могут комментировать тезисы и предлагать переработку текста.</p>
+            <p>Обсуждение и загрузка новых версий могут повторяться, пока тезисы не будут помечены как утверждённые.</p>
+    </section>
+        </a>
+    </div>
+    
+
+    <div class="hover">
+        <a href="awards.html">
+        <section class="awards">
+            <h2>Награды и сертификаты</h2>
+            <p>По итогам конференции члены программного комитета голосуют за сделанные доклады. Авторам лучших докладов высылаются дипломы, а всем участникам — именные сертификаты.</p>
+    </section>
+        </a>
+    </div>
+
+    <div class="hover">
+        <a href="management.html">
+        <section class="management">
+            <h2>Управление конференцией</h2>
+            <p>Координатор конференции управляет секциями, учётными записями членов программного комитета и размещает объявления для участников.</p>
+    </section>
+        </a>
+    </div>
+
+    <div class="hover">
+        <a href="moderation.html">
+        <section class="moderation">
+            <h2>Модерация конференций</h2>
+            <p>Модераторы сайта принимают заявки на добавление конференций. Заявки могут быть приняты или отклонены. Координаторы с большим количеством отклонённых заявок могут быть заблокированы.</p>
+    </section>
+        </a>
+    </div>
+</main>
+
+<footer>
+    <p>Контактная информация: info@conference-support.com</p>
+</footer>
+
+</body>
+</html>
